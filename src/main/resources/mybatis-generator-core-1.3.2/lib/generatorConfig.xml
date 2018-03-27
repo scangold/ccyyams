@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="F:\myeclipseworkspace\CCYYAMS\resources\mybatis-generator-core-1.3.2\lib\sqljdbc4.jar" />
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        connectionURL="jdbc:sqlserver://218.89.185.162:25410;databaseName=ccyyamsdatabase"
+        userId="amsuser"
+        password="12345678">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.fh.entity.amsmodel" targetProject="F:\myeclipseworkspace\CCYYAMS\src">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="mybatis.amsxml"  targetProject="F:\myeclipseworkspace\CCYYAMS\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.fh.dao" targetProject="F:\myeclipseworkspace\CCYYAMS\src">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    
+<!--     		
+    <table tableName="ams_apply" domainObjectName="Apply" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+
+    <table tableName="ams_archdistribute" domainObjectName="ArchDistribute" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+
+    <table tableName="ams_file" domainObjectName="File" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+
+    <table tableName="ams_prjtype" domainObjectName="Prjtype" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+
+    <table tableName="ams_project" domainObjectName="Project" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+
+
+    <table tableName="ams_recordborrow" domainObjectName="RecordBorrow" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+               
+	<table tableName="ams_apply" domainObjectName="Apply" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="ams_apply_file" domainObjectName="ApplyFile" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />               
+    <table tableName="ams_apply_stute" domainObjectName="ApplyStute" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />    
+               
+               
+    <table tableName="ams_share_path" domainObjectName="Sharepath" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />  
+               
+    <table tableName="ams_path_user" domainObjectName="Sharepathuser" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" /> 
+               
+                              
+         
+                    
+    <table tableName="ams_file_coverage" domainObjectName="FileCoverage" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />    
+                       
+                    
+    <table tableName="ams_file_xzqh" domainObjectName="FileXzqh" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />  
+               
+                    
+    <table tableName="ams_project" domainObjectName="Project" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />  
+
+               
+               
+               
+    <table tableName="ams_storage" domainObjectName="Storage" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+               
+               
+    <table tableName="ams_receive" domainObjectName="Receive" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />     
+               
+               
+               
+    <table tableName="ams_file_detail" domainObjectName="FileDetail" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />  
+               
+    <table tableName="ams_file" domainObjectName="File" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />     
+               
+               
+               
+               
+    <table tableName="ams_storage" domainObjectName="Storage" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+               
+    <table tableName="ams_hdm" domainObjectName="Hdm" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />     
+     
+    <table tableName="ams_fdm" domainObjectName="Fdm" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />            
+               
+    <table tableName="ams_cdm" domainObjectName="Cdm" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />   
+               
+               
+               
+               
+               
+    <table tableName="ams_realstorage" domainObjectName="RealStorage" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+               
+
+    <table tableName="ams_archdistribute" domainObjectName="ArchDistribute" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+     
+
+    <table tableName="ams_archdistribute_file" domainObjectName="ArchDistributeFile" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+     
+
+    <table tableName="ams_receive_temp" domainObjectName="ReceiveTemp" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+     
+            
+               
+    <table tableName="ams_receive" domainObjectName="Receive" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+        
+          
+               
+    <table tableName="fms_addfile" domainObjectName="FmsAddFile" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_borrow" domainObjectName="FmsBorrow" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_borrowcontent" domainObjectName="FmsBorrowContent" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_datadict" domainObjectName="FmsDataDict" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_datadict_item" domainObjectName="FmsDataDictItem" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_docbox" domainObjectName="FmsDocBox" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_docmain" domainObjectName="FmsDocMain" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_pzdoc" domainObjectName="FmsPZDoc" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_pzdocbox" domainObjectName="FmsPZDocBox" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fms_pzdocvolume" domainObjectName="FmsPZDocVolume" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fpkms_log_operate" domainObjectName="FPKMS_Log_Operate" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="kms_file" domainObjectName="KmsFile" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="kms_rukucontent" domainObjectName="KmsRuKuContent" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="kms_sendcontent" domainObjectName="KmsSendContent" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="fpkms_log_operate" domainObjectName="FPKmsLogOperate" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="pms_certificateandhonor" domainObjectName="PmsCertificateAndHonor" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="pms_docmain" domainObjectName="PmsDocMain" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="pms_pexperience" domainObjectName="PmsPExperience" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="pms_pfiletype" domainObjectName="PmsPFileType" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+    <table tableName="pms_pinformation" domainObjectName="PmsPInformation" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" />
+
+    
+    <table tableName="fms_datadict" domainObjectName="FmsDataDict" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" ></table>
+    <table tableName="fms_datadict_item" domainObjectName="FmsDataDictItem" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false" 
+               modelType="flat" /> 
+    
+    <table tableName="kms_data" domainObjectName="KmsData" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="true"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="true"  
+               enableCountByExample="true"  
+               enableUpdateByExample="true" 
+               modelType="flat" ></table>
+    <table tableName="kms_files" domainObjectName="KmsFiles" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false"></table>
+    <table tableName="kms_operate" domainObjectName="KmsOperate" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false"></table>
+    <table tableName="kms_operate_type" domainObjectName="KmsOperateType" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false"></table>
+       
+               <table tableName="kms_files" domainObjectName="KmsFiles" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false"></table>-->  
+                  
+               <table tableName="kms_addfile" domainObjectName="KmsAddFile" 
+               enableSelectByPrimaryKey="true"  
+               enableSelectByExample="false"  
+               enableUpdateByPrimaryKey="true"  
+               enableDeleteByPrimaryKey="true"  
+               enableDeleteByExample="false"  
+               enableCountByExample="false"  
+               enableUpdateByExample="false"></table>
+  </context>
+</generatorConfiguration>

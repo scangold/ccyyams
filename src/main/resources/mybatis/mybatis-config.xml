@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings> 
+        <setting name="cacheEnabled" value="true" /><!-- 全局映射器启用缓存 -->   
+        <setting name="useGeneratedKeys" value="true" /> 
+        <setting name="defaultExecutorType" value="REUSE" /> 
+    </settings>
+
+	<typeAliases>
+	
+		<typeAlias type="com.fh.entity.system.User" alias="User"/>
+		<typeAlias type="com.fh.entity.system.Role" alias="Role"/>
+		<typeAlias type="com.fh.entity.system.Menu" alias="Menu"/>
+		<typeAlias type="com.fh.entity.system.Dictionaries" alias="Dictionaries"/>
+		<typeAlias type="com.fh.entity.system.Department" alias="Department"/>
+		<typeAlias type="com.fh.util.PageData" alias="pd"/>
+		<!-- 分页 -->
+		<typeAlias type="com.fh.entity.Page" alias="Page"/>
+		
+		<!-- kioor2016年5月10日15:26:50 -->   
+		<typeAlias type="com.fh.entity.amsmodel.Project" alias="Project"/><!-- 项目表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.Prjtype" alias="Prjtype"/><!-- 项目类型表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.Receive" alias="Receive"/><!-- 接收表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.ReceiveTemp" alias="ReceiveTemp"/><!-- 接收临时表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.File" alias="File"/><!-- 成果及档案文件表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.Storage" alias="Storage"/><!-- 存储注册表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.Apply" alias="Apply"/><!-- 分发及借阅等申请表 -->  
+		<typeAlias type="com.fh.entity.amsmodel.ApplyFile" alias="ApplyFile"/><!-- 分发及借阅等申请表 -->
+		<typeAlias type="com.fh.entity.amsmodel.ApplyStute" alias="ApplyStute"/><!-- 分发及借阅等申请表 -->
+		
+		<typeAlias type="com.fh.entity.amsmodel.ArchDistribute" alias="ArchDistribute"/><!-- 成果分发记录表 --> 
+		<typeAlias type="com.fh.entity.amsmodel.RecordBorrow" alias="RecordBorrow"/><!-- 档案借阅记录表 -->  
+		
+		<typeAlias type="com.fh.entity.amsmodel.RealStorage" alias="RealStorage"/><!-- 真实存储介质表 -->
+		
+		
+		
+		<typeAlias type="com.fh.entity.amsmodel.FileCoverage" alias="FileCoverage"/><!-- 文件范围表 -->
+		<typeAlias type="com.fh.entity.amsmodel.FileDetail" alias="FileDetail"/><!-- 文件夹详情表 -->
+		<typeAlias type="com.fh.entity.amsmodel.FileXzqh" alias="FileXzqh"/><!-- 文件行政区划表 -->
+		
+		  		
+		<typeAlias type="com.fh.entity.amsmodel.Sharepathuser" alias="Sharepathuser"/>
+		
+		
+		
+		<typeAlias type="com.fh.entity.fms.FmsAddFile" alias="FmsAddFile"/><!-- 附件表 -->
+		<typeAlias type="com.fh.entity.fms.FmsBorrow" alias="FmsBorrow"/><!-- 文书借阅表 -->
+		<typeAlias type="com.fh.entity.fms.FmsBorrowContent" alias="FmsBorrowContent"/><!-- 文书借阅内容表 -->
+		<typeAlias type="com.fh.entity.fms.FmsDataDict" alias="FmsDataDict"/><!-- 表 -->
+		<typeAlias type="com.fh.entity.fms.FmsDataDictItem" alias="FmsDataDictItem"/><!-- 表 -->
+		<typeAlias type="com.fh.entity.fms.FmsDocBox" alias="FmsDocBox"/><!-- 文书文件盒表 -->
+		<typeAlias type="com.fh.entity.fms.FmsDocMain" alias="FmsDocMain"/><!-- 文书文件表 -->
+		<typeAlias type="com.fh.entity.fms.FmsPZDoc" alias="FmsPZDoc"/><!-- 文书财务凭证表 -->
+		<typeAlias type="com.fh.entity.fms.FmsPZDocBox" alias="FmsPZDocBox"/><!-- 文书财务凭证盒表 -->
+		<typeAlias type="com.fh.entity.fms.FmsPZDocVolume" alias="FmsPZDocVolume"/><!-- 文书财务凭证册表 -->
+					
+		<typeAlias type="com.fh.entity.amsmodel.FPKMS_Log_Operate" alias="FPKMS_Log_Operate"/><!-- 档案操作记录表 -->
+		<typeAlias type="com.fh.entity.amsmodel.FPKmsLogOperate" alias="FPKmsLogOperate"/><!-- 档案操作记录表 -->
+		
+		<typeAlias type="com.fh.entity.amsmodel.PmsCertificateAndHonor" alias="PmsCertificateAndHonor"/><!-- 人事凭证荣誉表 -->
+		<typeAlias type="com.fh.entity.amsmodel.PmsDocMain" alias="PmsDocMain"/><!-- 人事档案目录表 -->
+		<typeAlias type="com.fh.entity.amsmodel.PmsPExperience" alias="PmsPExperience"/><!-- 人事经历表 -->
+		<typeAlias type="com.fh.entity.amsmodel.PmsPFileType" alias="PmsPFileType"/><!-- 人事档案类型表 -->
+		<typeAlias type="com.fh.entity.amsmodel.PmsPInformation" alias="PmsPInformation"/><!-- 人事基本信息表 -->
+
+		<typeAlias type="com.fh.entity.amsmodel.KmsFile" alias="KmsFile"/><!-- 科技档案表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsFiles" alias="KmsFiles"/><!-- 科技档案表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsData" alias="KmsData"/><!-- 科技电子档案表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsOperate" alias="KmsOperate"/><!-- 科技档案操作记录表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsOperateType" alias="KmsOperateType"/><!-- 科技档案操作类型（借阅归还损毁丢失等）表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsRuKuContent" alias="KmsRuKuContent"/><!-- 科技档案入库登记表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsSendContent" alias="KmsSendContent"/><!-- 科技档案发送登记表 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsFileBox" alias="KmsFileBox"/><!-- 科技档案盒 -->
+		<typeAlias type="com.fh.entity.amsmodel.KmsAddFile" alias="KmsAddFile"/><!-- 科技档案附件 -->
+		
+		
+		<typeAlias type="com.fh.entity.log.Optlog" alias="Optlog"/><!-- 日志 -->
+	</typeAliases>
+
+	<plugins>
+		<plugin interceptor="com.fh.plugin.PagePlugin">
+			<property name="dialect" value="sqlserver2012"/><!-- sqlserver or sqlserver2012 or mysql or oracle -->
+			<property name="pageSqlId" value=".*listPage.*"/>
+		</plugin>
+	</plugins>
+
+	
+</configuration>

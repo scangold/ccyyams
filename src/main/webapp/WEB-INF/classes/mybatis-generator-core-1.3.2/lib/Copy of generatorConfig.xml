@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="G:\MyEclipseBASE\CCYYAMS\resources\mybatis-generator-core-1.3.2\lib\sqljdbc4.jar" />
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        connectionURL="jdbc:sqlserver://localhost:1433;databaseName=ccyyamsdb"
+        userId="sa"
+        password="admin123">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.fh.entity.amsmodel" targetProject="G:\MyEclipseBASE\CCYYAMS\src">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="mybatis.amsxml"  targetProject="G:\MyEclipseBASE\CCYYAMS\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.fh.dao" targetProject="G:\MyEclipseBASE\CCYYAMS\src">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <table tableName="ams_project" domainObjectName="Project" />
+
+    <table tableName="ams_receive" domainObjectName="Receive"  />
+               
+    <table tableName="ams_file" domainObjectName="File" />
+               
+    <table tableName="ams_archdistribute" domainObjectName="ArchDistribute" />
+               
+    <table tableName="ams_recordborrow" domainObjectName="RecordBorrow"  />
+               
+    <table tableName="ams_apply" domainObjectName="Apply" />
+               
+    <table tableName="ams_storage" domainObjectName="Storage"  />
+               
+    <table tableName="ams_hdm" domainObjectName="Hdm"  />
+               
+
+  </context>
+</generatorConfiguration>

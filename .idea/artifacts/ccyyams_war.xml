@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ccyyams:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ccyyams.war">
+      <element id="artifact" artifact-name="ccyyams:war exploded" />
+    </root>
+  </artifact>
+</component>
