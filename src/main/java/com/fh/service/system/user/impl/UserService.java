@@ -29,6 +29,7 @@ public class UserService implements UserManager{
 	 * @return
 	 * @throws Exception
 	 */
+	@Override
 	public PageData getUserByNameAndPwd(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("UserMapper.getUserInfo", pd);
 	}
@@ -37,6 +38,7 @@ public class UserService implements UserManager{
 	 * @param pd
 	 * @throws Exception
 	 */
+	@Override
 	public void updateLastLogin(PageData pd)throws Exception{
 		dao.update("UserMapper.updateLastLogin", pd);
 	}
@@ -46,6 +48,7 @@ public class UserService implements UserManager{
 	 * @return
 	 * @throws Exception
 	 */
+	@Override
 	public User getUserAndRoleById(String USER_ID) throws Exception {
 		return (User) dao.findForObject("UserMapper.getUserAndRoleById", USER_ID);
 	}
@@ -55,6 +58,7 @@ public class UserService implements UserManager{
 	 * @return
 	 * @throws Exception
 	 */
+	@Override
 	public PageData findByUsername(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("UserMapper.findByUsername", pd);
 	}
