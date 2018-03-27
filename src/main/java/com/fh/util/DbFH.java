@@ -68,7 +68,9 @@ public class DbFH{
 	 * @throws ExecutionException
 	 */
 	public Object backup(String tableName) throws InterruptedException, ExecutionException {
-		if(null != backUpTableList.get(tableName)) return null;
+		if(null != backUpTableList.get(tableName)){
+			return null;
+		}
 		backUpTableList.put(tableName, tableName); 				// 标记已经用于备份(防止同时重复备份,比如备份一个表的线程正在运行，又发来一个备份此表的命令)
 		ExecutorService pool = Executors.newFixedThreadPool(2); 
 		Callable<Object> fhc = new DbBackUpCallable(tableName);	//创建一个有返回值的线程
