@@ -455,7 +455,7 @@
                 <configuration>
                     <scanIntervalSeconds>3</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/a</contextPath>
+                        <contextPath>/CCYYAMS</contextPath>
                         <parentLoaderPriority>true</parentLoaderPriority>
                     </webApp>
                     <httpConnector>
@@ -521,7 +521,7 @@
                     <url>http://218.89.185.162:25420/manager/text</url>-->
                     <username>giser</username>
                     <password>123456</password>
-                    <path>/ccyyams</path>
+                    <path>/CCYYAMS</path>
                 </configuration>
             </plugin>
         </plugins>

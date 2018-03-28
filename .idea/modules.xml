@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ccyyams.iml" filepath="$PROJECT_DIR$/ccyyams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ccyyams.iml" filepath="$PROJECT_DIR$/.idea/ccyyams.iml" />
     </modules>
   </component>
 </project>
